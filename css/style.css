@@ -14,10 +14,9 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
+    width:100%;
     background-color: #d3d3d369;
-    z-index: 100;
+
     
 }
 
@@ -25,11 +24,11 @@ header{
 .navBar{
     display: flex;
     list-style: none;
-    width: 400px;
+    width: 100%;
     gap: 1.25rem;
     margin-top: 0;
     margin-bottom: 0;
-    padding-left: 0;
+    padding-right: 20px;
     font-family: 'Nunito', sans-serif;
     font-style: bold;
     font-size: 16px;
@@ -49,23 +48,25 @@ header{
 
 .sectionManifiesto{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
+    justify-content: center;
+    align-items: center;
     height: 600px;
     background-color:rgb(236, 236, 236)
 }
 
+
 .textoManifiesto {
     padding-left: 20px;
+
 
 }
 .cita{
     font-family: 'Nunito', sans-serif;
     font-style: italic;
     font-size: 30px;
-    margin-top: 120px;
+    width: 45%;
+
 }
 .autora{
     font-family: 'Nunito', sans-serif;
@@ -74,12 +75,7 @@ header{
     margin-top: 5px;
 }
 
-.annaImg img {
-    display: flex;
-    padding-right: 100px;
-    margin-left: 30px;
 
-}
 
 .verMas {
 margin-top: 20px;
@@ -239,16 +235,7 @@ text-align: center;
     font-size: 18px;
     margin-top: 5px;
 }
-.pNosotros{
-    font-family: 'Nunito', sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    margin-top: 5px;
-}
----------
-{
-background-color: rgba(211, 211, 211, 0.483);
-}
+
 
 .cards-container{
     display: flex;
@@ -327,20 +314,30 @@ background-color: rgba(211, 211, 211, 0.483);
     font-style: bold;
     font-size: 23px;
 }
+
+
 .pNosotros{
     font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-size: 16px;
+    text-align: center;
+
 }
 .conoceNosotros{
     font-family: 'Nunito', sans-serif;
     font-style: bold;
     font-size: 54px;
+    text-align: center;
 }
 .pNosotros2{
     font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-size: 20px;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+
 }
 .tituloContacto{
     background-image: url(../assets/img/imagencontactoprincipal.jpg);
@@ -410,11 +407,74 @@ background-color: rgba(211, 211, 211, 0.483);
 
 }
 .sectionNosotros{
- text-align: center;
- align-items: center;
- 
+    display: grid;
+    align-self: center;
+    width: 100%;
+    height: 500px;
+    padding-bottom: 100px;
+    grid-template: 1fr 1fr 1fr / repeat(3,1fr);
+    grid-template-areas:
+    "jocelyn martin jordan"
+    "jocelyn martin jordan"
+    "jocelyn martin jordan"
+    ;
+    row-gap: 10px;  
+    column-gap: 10px;
+    }
     
-}
+    .h2Nosotros  {
+        align-self: center;
+    }
+    .MartinDonin {
+        grid-area: martin;
+        align-self: center;
+        justify-content: center;     
+
+    }
+    .JocelynSchleifer {
+        grid-area: jocelyn;
+        align-self: center;
+        justify-content: center;     
+
+    }
+    .JordanGomez {
+        grid-area: jordan;
+        align-self: center;
+        justify-content: center;     
+
+
+    }
+
+    .sectionBeneficios{
+        display: grid;
+        width: 100%;
+        height: 30vh;
+        padding-top: 30px;
+        grid-template: 1fr 1fr 1fr 1fr / repeat(4,1fr);
+        grid-template-areas:
+        "tienda envio tarjetas devolucion"
+        "tienda envio tarjetas devolucion"
+        "tienda envio tarjetas devolucion"
+        "tienda envio tarjetas devolucion"
+        ;
+        row-gap: 10px;  
+        column-gap: 10px;
+        }
+        
+        .tiendaOnline {
+            grid-area: tienda;
+        }
+        .envioGratis {
+            grid-area: envio;
+        }
+        .tarjetas {
+            grid-area: tarjetas;
+        }
+        .devolucion {
+            grid-area: devolucion;
+        }
+
+
 
 .FormularioTotal{
     display: flex;
@@ -425,5 +485,77 @@ background-color: rgba(211, 211, 211, 0.483);
     
 }
 
----------------
+@media(max-width:1024px) {
 
+    .sectionNosotros{
+        display: grid;
+        margin-bottom: 30px;
+        width: 100%;
+        height: 100vh;
+        grid-template: 1fr 1fr 1fr / 1fr;
+        grid-template-areas:
+        "jocelyn"
+        "martin"
+        "jordan"
+        ;
+        row-gap: 10px;  
+        column-gap: 10px;
+        }
+        
+        .MartinDonin {
+            grid-area: martin;
+        }
+        .JocelynSchleifer {
+            grid-area: jocelyn;
+        }
+        .JordanSeptimus {
+            grid-area: jordan;
+        }
+
+
+}
+
+@media(max-width:1024px) {
+
+    .sectionBeneficios{
+        display: grid;
+        width: 100%;
+        height: 80vh;
+        padding-bottom: 100px;
+
+        grid-template: 1fr 1fr / 1fr;
+        grid-template-areas:
+        "tienda envio" 
+        "tienda envio" 
+        "tarjetas devolucion"
+        "tarjetas devolucion"
+        ;
+
+        }
+
+        .pBeneficios {
+            margin-top: 50px;  
+
+        }
+
+        
+        .h2Beneficios {
+            margin-top: 50px;  
+
+        }
+        
+        .tiendaOnline {
+            grid-area: tienda;
+        }
+        .envioGratis {
+            grid-area: envio;
+        }
+        .tarjetas {
+            grid-area: tarjetas;
+        }
+        .devolucion {
+            grid-area: devolucion;
+        }
+
+
+}
