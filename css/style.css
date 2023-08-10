@@ -14,7 +14,6 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width:100%;
     background-color: #d3d3d369;
 
     
@@ -24,63 +23,38 @@ header{
 .navBar{
     display: flex;
     list-style: none;
-    width: 100%;
     gap: 1.25rem;
-    margin-top: 0;
-    margin-bottom: 0;
     padding-right: 20px;
     font-family: 'Nunito', sans-serif;
     font-style: bold;
     font-size: 16px;
 
+}
+.navBar li a {
+    text-decoration: none;
+    color: black;
 
 } 
 
-.footerContainerflex{
-    background-color: black;
-    display: flex;
-    width: 100%;
-    padding: 20px;
-    justify-content: space-between;
-    flex-flow: row wrap;
 
-}
-
-.h4Footer {
-    color: rgba(199, 199, 199, 0.603);
-    font-family: 'Nunito', sans-serif;
-    font-style: bold;
-    font-size: 16px;
-    padding-bottom: 5px;
-}
-
-.pFooter {
-    color: rgba(216, 214, 214, 0.322);
-    font-family: 'Nunito', sans-serif;
-    font-style: light;
-    font-size: 16px;
-}
-
-.cajaFooter {
-    width: 120px;
-    height: 200px;
-    margin: 20px;
-
-
-}
 
 
 .cardImg{
     width: 100%;
-    object-fit: cover;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+    background-position: 18% 50% 80%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    overflow: hidden;
+
 
 }
 
 .sectionManifiesto{
     display: flex;
+    flex-direction: row-reverse;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -117,34 +91,6 @@ text-align: center;
 }
 
 
-.sectionColecciones {
-    display: flex;
-    width: 100%;
-    height: 900px;
-    flex-flow: row wrap;
-    justify-content: space-evenly ;
-    align-items: center;
-    
-}
-
-.headlineColecciones {
-    align-self: flex-start;
-    margin-top: 40px;
-}
-.headlineColecciones h2 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: bold;
-    font-size: 40px;
-    
-}
-.coleccion {
-    width: 500px;
-    height: 500px;
-    /*border: 1px solid grey; */
-    background-color: rgba(247, 246, 210, 0.612);
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.445);
-}
-
 .holaMensaje {
     width: 891px;
     height: 249px;
@@ -176,23 +122,124 @@ text-align: center;
 
 }
 
-
-.coleccion img{
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+.headlineColecciones {
+    text-align: center;
+    margin: 50px;
+    font-family: 'Playfair Display', serif;
+    font-style: bold;
+    font-size: 23px;
     
-
 }
-.coleccion img {
+
+.coleccionesGrid {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    grid-template-columns: repeat(2,50%);
+    grid-template-rows: 700px 700px 700px;
+    grid-template-areas: 
+    "imgsilla textosilla"
+    "textomesa imgmesa"
+    "imglampara textolampara"
+    ;
+    gap: 20px;
+}
+
+.h2Colecciones {
+
+    font-family: 'Nunito', sans-serif;
+    font-style: bold;
+    font-size: 23px;
+    text-align: center;
+}
+.cajaTextosSillas {
+    width: 900px;
+    height: 580px;
+    text-align: center;
+    align-self: center;
+ }
+ .cajaTextosMesas {
+    width: 900px;
+    height: 580px;
+    text-align: center;
+    align-self: center;
+
+
+ }
+
+ .cajaTextosLamparas {
+    width: 900px;
+    padding-top: 30px;
+    height: 580px;
+    text-align: center;
+    align-self: center;
+ }
+
+ 
+ .pColecciones {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+    width: 900px;
+    padding-top: 30px;
+ }
+
+.imgSilla{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
+    padding-left: 100px;
+    margin-top: 20px;
 }
 
+.imgLampara{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 20px;
+    padding-left: 100px;
+}
+.imgMesa{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.textoSilla {
+    grid-area: textosilla;
+}
+
+.imgSilla {
+    grid-area: imgsilla;
+}
+
+.textoMesa {
+    grid-area: textomesa;
+}
+
+.imgLampara {
+    grid-area: imglampara;
+}
+
+.pedidoEnvio {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color:rgb(236, 236, 236);
+    margin-bottom: 80px;
+}
+
+.pedidoEnvio p{
+    font-size: 25px;
+}
+
+
+.verMas {
+    height: 30px;
+    width: 200px;
+}
 .container{
     max-width: 1200px;
     margin: 0;
@@ -239,15 +286,21 @@ text-align: center;
 .cards-container{
     display: flex;
     width: 80%;
-    height: 1800px;
     margin: auto;
     flex-flow: row wrap;/*primer atributo direction / wrap**/
     justify-content:space-evenly;/*propiedad en row que mueve los elementos de izquierda a derecha*/
     align-items: center; 
+    row-gap: 10px;  
+    column-gap: 10px;
     
 }
 .shopBoton{
+    justify-content: center;
     text-align: center;
+    margin: 100px;
+    width: 200px;
+    height: 30px;
+
 
 }
 .cardc1{
@@ -293,6 +346,13 @@ text-align: center;
     font-style: bold;
     font-size: 19px;
 }
+
+.botonProducto {
+    width: 250px;
+    height: 40px;
+    background-color: white;
+    border-radius: 30px;
+}
 .parrafoResultado{
     font-family: 'Nunito', sans-serif;
     font-style: normal;
@@ -305,7 +365,8 @@ text-align: center;
     font-family: 'Nunito', sans-serif;
     font-style: bold;
     font-size: 23px;
-    margin: 15px 0px 15px 35px;
+    padding-left: 20px;
+    padding-top: 50px;
 }
 
 .h3Contacto{
@@ -314,12 +375,19 @@ text-align: center;
     font-size: 23px;
 }
 
-
-.pNosotros{
+.pNosotrostitulo {
     font-family: 'Nunito', sans-serif;
     font-style: normal;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
+
+}
+.pNosotros{
+    font-family: 'Nunito', sans-serif;
+    font-style: italic;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 20px;
 
 }
 .conoceNosotros{
@@ -367,16 +435,25 @@ text-align: center;
 }
 
 .h5Confian{
+    padding-top: 20px;
+    margin: 20px;    
     font-family: 'Nunito', sans-serif;
     font-style: bold;
     font-size: 33px;
 }
 .pConfian{
+    padding-top: 8px;
+    margin: 20px;    
     font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-size: 25px;
 }
 
+.sectionClientes {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
 .cajaCliente1 {
 
     width: 549px;
@@ -398,50 +475,68 @@ text-align: center;
     font-family: 'Nunito', sans-serif;
     font-style: bold;
     font-size: 30px;
+    margin: 20px;
 }
 .pClientes2{
     font-family: 'Nunito', sans-serif;
-    font-style: normal;
+    font-style: italic;
     font-size: 20px;
+    margin: 20px;
 
 }
 .sectionNosotros{
     display: grid;
     align-self: center;
+    justify-content: center;
     width: 100%;
-    height: 500px;
     padding-bottom: 100px;
-    grid-template: 1fr 1fr 1fr / repeat(3,1fr);
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: auto auto auto;
+
     grid-template-areas:
     "jocelyn martin jordan"
     "jocelyn martin jordan"
     "jocelyn martin jordan"
     ;
     row-gap: 10px;  
-    column-gap: 10px;
+    column-gap: 100px;
     }
     
+
     .h2Nosotros  {
-        align-self: center;
+    text-align: center;
     }
     .MartinDonin {
         grid-area: martin;
         align-self: center;
-        justify-content: center;     
+        width: 310px;
+        height: 450px;
+        border: 1px solid #bdbaba;    
+
 
     }
     .JocelynSchleifer {
         grid-area: jocelyn;
         align-self: center;
-        justify-content: center;     
+        width: 310px;
+        height: 450px;
+        border: 1px solid #bdbaba;    
 
     }
+
     .JordanGomez {
         grid-area: jordan;
         align-self: center;
-        justify-content: center;     
+        width: 310px;
+        height: 450px;
+        border: 1px solid #bdbaba;    
 
 
+
+    }
+
+    .sectionNosotros img {
+        justify-content: center;
     }
 
     .sectionBeneficios{
@@ -465,9 +560,11 @@ text-align: center;
         }
         .envioGratis {
             grid-area: envio;
+
         }
         .tarjetas {
             grid-area: tarjetas;
+            
         }
         .devolucion {
             grid-area: devolucion;
@@ -484,17 +581,47 @@ text-align: center;
 }
 
 
+.footerContainerflex{
+    background-color: black;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    justify-content: space-between;
+    flex-flow: row wrap;
+
+}
+
+.h4Footer {
+    color: rgba(199, 199, 199, 0.603);
+    font-family: 'Nunito', sans-serif;
+    font-style: bold;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+.pFooter {
+    color: rgba(216, 214, 214, 0.322);
+    font-family: 'Nunito', sans-serif;
+    font-style: light;
+    font-size: 16px;
+}
+
+.cajaFooter {
+    width: 120px;
+    height: 200px;
+    margin: 20px;
+
+
+}
 
 
 
-
-@media(max-width:1024px) {
+@media(max-width:480px) {
 
     .sectionNosotros{
         display: grid;
-        margin-bottom: 30px;
         width: 100%;
-        height: 100vh;
+        height: auto;
         grid-template: 1fr 1fr 1fr / 1fr;
         grid-template-areas:
         "jocelyn"
@@ -515,6 +642,10 @@ text-align: center;
             grid-area: jordan;
         }
 
+        .conoceNosotros {
+            font-size: 35px;
+
+        }
 
 }
 
@@ -523,9 +654,9 @@ text-align: center;
     .sectionBeneficios{
         display: grid;
         width: 100%;
-        height: 80vh;
+        height: auto;
+        padding-left: 10px;
         padding-bottom: 100px;
-
         grid-template: 1fr 1fr / 1fr;
         grid-template-areas:
         "tienda envio" 
@@ -537,42 +668,183 @@ text-align: center;
         }
 
         .pBeneficios {
-            margin-top: 50px;  
+            font-size: 16px; 
 
         }
 
         
         .h2Beneficios {
-            margin-top: 50px;  
+            font-size: 24px; 
 
         }
         
         .tiendaOnline {
             grid-area: tienda;
+            width: 150px;
+
         }
         .envioGratis {
             grid-area: envio;
+            width: 150px;
+
         }
         .tarjetas {
             grid-area: tarjetas;
+            width: 150px;
+
         }
         .devolucion {
             grid-area: devolucion;
+            width: 150px;
+
         }
 
+        @media (max-width:1024px) {
 
-}
+        .coleccionesGrid {
+            display: grid;
+            justify-content: center;
+            width: 100%;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto auto auto;
+            grid-template-areas: 
+            "textosilla"
+            "imgsilla"
+            "textomesa"
+            "imgmesa"
+            "imglampara"
+            "textolampara"
+            ;
+        }
+
+        .cajaTextosSillas {
+            width: 100%;
+            height: 200px;
 
 
-@media (max-width:768px){
-    header{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: #d3d3d369;
-        width: 100%;
-        font-size: 7px;
-      
+            }
+
+            .cajaTextosMesas {
+                width: auto;
+                text-align: center;
+                align-self: center;
+            
+            
+            }
+            .pColecciones {
+                width: 300px;
+                text-align: center;
+                padding-top: 0px;
+
+            }
+            .cajaTextosLamparas {
+                width: 900px;
+                padding-top: 30px;
+                height: 580px;
+                text-align: center;
+                align-self: center;
+            }
+            }
     }
+
+
+@media (max-width:1024px){
+
+    header {
+    flex-direction: column;
+    justify-content: center;
 }
 
+    .navBar{
+    flex-direction: column;
+    padding-right: 0;
+    text-align: center;
+    margin: 5px;
+    row-gap: 10px;
+
+
+}
+.imgLogo {
+padding-top: 10px;
+}
+
+}
+
+@media (max-width:1024px){
+
+.sectionClientes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 30px;
+
+}
+
+.cajaCliente1 {
+
+    width: auto;
+    height: auto;
+    border: 1px solid grey;
+    margin: 5px;
+
+}
+
+.cajaCliente2 {
+
+    width: auto;
+    height: auto;
+    border: 1px solid grey;
+    margin: 5px;
+}
+
+.tituloContacto{
+    background-image: url(../assets/img/contactomobile.png);
+    display: flex;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Nunito', sans-serif;
+    font-style: bold;
+    font-size: 20px;
+}
+.holaMensaje {
+    width: auto;
+    height: 249px;
+    border: 1px solid grey;
+    font-family: 'Nunito', sans-serif;
+    font-style: bold;
+    font-size: 23px;
+    margin: 5px;
+}
+
+.tuNombre {
+    width: auto;
+    height: 92px;
+    border: 1px solid grey;
+    font-family: 'Nunito', sans-serif;
+    font-style: bold;
+    font-size: 23px;
+    margin: 5px;
+
+}
+.tuEmail {
+    width: auto;
+    height: 92px;
+    border: 1px solid grey;
+    font-family: 'Nunito', sans-serif;
+    font-style: bold;
+    font-size: 23px;
+    margin: 5px;
+
+}
+.Enviar {
+    margin: 30px;
+    width: 200px;
+    height: 30px;
+
+}
+}
